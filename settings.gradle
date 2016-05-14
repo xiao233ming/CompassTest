@@ -1,1 +1,3 @@
 include ':app'
+//当app只有一个模块，include ':app'
+//setting.gradle针对多模块

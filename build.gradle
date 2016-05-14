@@ -1,5 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+//定义全局的相关属性
 buildscript {
     repositories {
         jcenter()

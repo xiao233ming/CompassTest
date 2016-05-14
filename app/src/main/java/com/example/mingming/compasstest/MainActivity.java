@@ -11,6 +11,11 @@ import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+
+import net.youmi.android.AdManager;
+import net.youmi.android.banner.AdSize;
+import net.youmi.android.banner.AdView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +29,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //广告管理器
+        AdManager.getInstance(this).init("a0e3d7f5ac54a2e9", "452eb34b9b7bfe6c", false);
+
+        //实例化广告条
+        AdView adView = new AdView(this, AdSize.FIT_SCREEN);
+        LinearLayout adLayout = (LinearLayout) findViewById(R.id.adLayout);
+        //将广告加入布局中
+        adLayout.addView(adView);
+
         compassImg = (ImageView) findViewById(R.id.compass_img);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
@@ -89,4 +104,5 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
+
 }
